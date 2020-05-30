@@ -9,21 +9,22 @@
       <v-toolbar-title>マイアドレス帳</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
+    
 
     <v-content>
-      <HelloWorld/>
+      <SideNav />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import SideNav from './components/SideNav'
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    SideNav
   },
 
   data: () => ({
