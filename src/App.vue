@@ -14,9 +14,8 @@
     </v-app-bar>
     <SideNav />
     
-
-    <v-content>
-      <v-container fluid fill-height align-start>
+    <v-content fluid fill-height align-start>
+      <v-container>
         <router-view />
       </v-container>
     </v-content>
@@ -39,10 +38,12 @@ export default {
       if (user) {
         this.setLoginUser(user)
         this.fetchAddresses()
-        if (this.$router.currentRoute.name === 'home') this.$router.push({ name: 'addresses' })
+        if (this.$router.currentRoute.name === 'home') {
+          this.$router.push({ name: 'addresses' }, () => {})
+        }
       } else {
         this.deleteLoginUser()
-        this.$router.push({ name: 'home' })
+        this.$router.push({ name: 'home' }, () => {})
       }
     })
   },
